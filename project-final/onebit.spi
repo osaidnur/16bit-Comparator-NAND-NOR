@@ -1,0 +1,32 @@
+*** SPICE deck for cell onebit{sch} from library oneBit
+*** Created on Mon Aug 12, 2024 22:25:04
+*** Last revised on Thu Aug 15, 2024 08:07:03
+*** Written on Thu Aug 15, 2024 08:07:11 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd
+
+*** TOP LEVEL CELL: oneBit:onebit{sch}
+Mnmos@0 net@0 a gnd gnd NMOS L=0.8U W=1U
+Mnmos@1 net@11 b gnd gnd NMOS L=0.8U W=1U
+Mnmos@2 greater net@0 b gnd NMOS L=0.4U W=1U
+Mnmos@3 less a net@11 gnd NMOS L=0.4U W=1U
+Mnmos@4 equal less gnd gnd nmos L=0.4U W=1U
+Mnmos@5 net@102 greater gnd gnd nmos L=0.4U W=1U
+Mpmos@0 one a net@0 one PMOS L=0.8U W=3U
+Mpmos@1 one b net@11 one PMOS L=0.8U W=3U
+Mpmos@2 gnd net@0 greater one PMOS L=0.4U W=3U
+Mpmos@3 gnd a less one PMOS L=0.4U W=3U
+Mpmos@4 net@102 less equal one pmos L=0.4U W=3U
+Mpmos@5 one greater net@102 one pmos L=0.4U W=3U
+
+* Spice Code nodes in cell cell 'oneBit:onebit{sch}'
+vdd vddd 0 DC 5
+va A 0 pwl 10n 0 20n 5 50n 5 60n 0 90n 0 100n 5 130n 5 140n 0 170n 0 180n 5
+vb b 0 pwl 10n 0 20n 0 50n 0 60n 5 90n 5 100n 5 130n 5 140n 5 170n 0 180n 5
+vone one 0 pwl 0n 5 180n 5
+cload out 0 250fF
+.tran 200ns
+.include D:\Electric\C5_models.txt
+.END

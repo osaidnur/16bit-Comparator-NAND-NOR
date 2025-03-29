@@ -1,0 +1,13 @@
+*** SPICE deck for cell not_gate{sch} from library NOT
+*** Created on Sat Aug 03, 2024 14:14:04
+*** Last revised on Sat Aug 17, 2024 18:54:13
+*** Written on Sat Aug 17, 2024 20:44:38 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NOT:not_gate{sch}
+Mnmos@1 out in gnd gnd NMOS L=0.4U W=1U
+Mpmos@1 vdd in out vdd PMOS L=0.4U W=3U
+.END

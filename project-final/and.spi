@@ -1,0 +1,22 @@
+*** SPICE deck for cell and{sch} from library AND
+*** Created on Sun Aug 11, 2024 21:53:30
+*** Last revised on Thu Aug 15, 2024 14:08:53
+*** Written on Thu Aug 15, 2024 14:08:57 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd
+
+*** TOP LEVEL CELL: AND:and{sch}
+Mnmos@0 OUT A B gnd NMOS L=0.4U W=9U
+Mpmos@0 gnd A OUT B PMOS L=0.4U W=9U
+
+* Spice Code nodes in cell cell 'AND:and{sch}'
+va A 0 pwl 10n 0 20n 5 50n 5 60n 0 140n 0 180n 5 220n 5 260n 0 300n 0 340n 5
+vb B 0 pwl 10n 0 20n 5 150n 5 180n 0
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=4ns trag v(out) val=0.5 fall=1 
+.measure tran tr trig v(out) val=0.5 rise=1 td=4ns trag v(out) val=4.5 rise=1
+.tran 200ns
+.include C:\electric\C5_models.txt
+.END

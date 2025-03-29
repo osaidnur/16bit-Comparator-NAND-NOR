@@ -1,0 +1,94 @@
+*** SPICE deck for cell 4_bit{sch} from library 4bit
+*** Created on Fri Aug 16, 2024 16:44:38
+*** Last revised on Sat Aug 17, 2024 17:38:30
+*** Written on Wed Aug 21, 2024 23:19:00 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT NAND__nand_gate_2in FROM CELL NAND:nand_gate_2in{sch}
+.SUBCKT NAND__nand_gate_2in A B out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A net@28 gnd NMOS L=0.6U W=1.5U
+Mnmos@1 net@28 B gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@0 vdd B out vdd PMOS L=0.6U W=4.5U
+Mpmos@1 vdd A out vdd PMOS L=0.6U W=4.5U
+.ENDS NAND__nand_gate_2in
+
+*** SUBCIRCUIT NAND__nand_gate_4in FROM CELL NAND:nand_gate_4in{sch}
+.SUBCKT NAND__nand_gate_4in A B C D out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A net@29 gnd NMOS L=0.6U W=1.5U
+Mnmos@1 net@31 D gnd gnd NMOS L=0.6U W=1.5U
+Mnmos@2 net@29 B net@30 gnd NMOS L=0.6U W=1.5U
+Mnmos@3 net@30 C net@31 gnd NMOS L=0.6U W=1.5U
+Mpmos@1 vdd B out vdd PMOS L=0.6U W=1.5U
+Mpmos@2 vdd C out vdd PMOS L=0.6U W=1.5U
+Mpmos@3 vdd D out vdd PMOS L=0.6U W=1.5U
+Mpmos@4 vdd A out vdd PMOS L=0.6U W=1.5U
+.ENDS NAND__nand_gate_4in
+
+*** SUBCIRCUIT NAND__nand_gate_3in FROM CELL NAND:nand_gate_3in{sch}
+.SUBCKT NAND__nand_gate_3in A B C out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A net@11 gnd NMOS L=0.6U W=1.5U
+Mnmos@2 net@11 B net@12 gnd NMOS L=0.6U W=1.5U
+Mnmos@3 net@12 C gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@0 vdd B out vdd PMOS L=0.6U W=4.5U
+Mpmos@1 vdd C out vdd PMOS L=0.6U W=4.5U
+Mpmos@3 vdd A out vdd PMOS L=0.6U W=4.5U
+.ENDS NAND__nand_gate_3in
+
+*** SUBCIRCUIT NOR__nor_gate FROM CELL NOR:nor_gate{sch}
+.SUBCKT NOR__nor_gate A B out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A gnd gnd NMOS L=0.6U W=1.5U
+Mnmos@1 out B gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@0 net@0 A out vdd PMOS L=0.6U W=4.5U
+Mpmos@1 vdd B net@0 vdd PMOS L=0.6U W=4.5U
+.ENDS NOR__nor_gate
+
+*** SUBCIRCUIT NOT__not_gate FROM CELL NOT:not_gate{sch}
+.SUBCKT NOT__not_gate in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@1 out in gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@1 vdd in out vdd PMOS L=0.6U W=4.5U
+.ENDS NOT__not_gate
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: 4bit:4_bit{sch}
+Xnand_gat@1 net@286 net@300 net@342 NAND__nand_gate_2in
+Xnand_gat@3 net@286 net@303 net@344 NAND__nand_gate_2in
+Xnand_gat@9 net@278 net@342 net@346 net@350 A<B NAND__nand_gate_4in
+Xnand_gat@10 net@284 net@344 net@348 net@352 A>B NAND__nand_gate_4in
+Xnand_gat@11 net@286 net@308 net@319 net@346 NAND__nand_gate_3in
+Xnand_gat@12 net@286 net@308 net@321 net@348 NAND__nand_gate_3in
+Xnand_gat@13 net@286 net@308 net@325 net@332 net@350 NAND__nand_gate_4in
+Xnand_gat@14 net@286 net@308 net@325 net@451 net@352 NAND__nand_gate_4in
+Xnor_gate@1 A3 net@163 net@259 NOR__nor_gate
+Xnor_gate@2 net@356 B3 net@420 NOR__nor_gate
+Xnor_gate@10 net@186 B2 net@303 NOR__nor_gate
+Xnor_gate@11 A1 net@195 net@319 NOR__nor_gate
+Xnor_gate@12 net@198 B1 net@321 NOR__nor_gate
+Xnor_gate@13 A0 net@210 net@332 NOR__nor_gate
+Xnor_gate@14 net@207 B0 net@451 NOR__nor_gate
+Xnor_gate@16 net@300 net@303 net@308 NOR__nor_gate
+Xnor_gate@17 net@319 net@321 net@325 NOR__nor_gate
+Xnor_gate@19 A2 net@364 net@300 NOR__nor_gate
+Xnor_gate@21 net@259 net@420 net@286 NOR__nor_gate
+Xnotgate@4 A3 net@356 NOT__not_gate
+Xnotgate@6 A2 net@186 NOT__not_gate
+Xnotgate@7 A1 net@198 NOT__not_gate
+Xnotgate@8 A0 net@207 NOT__not_gate
+Xnotgate@9 B3 net@163 NOT__not_gate
+Xnotgate@10 B2 net@364 NOT__not_gate
+Xnotgate@11 B1 net@195 NOT__not_gate
+Xnotgate@12 B0 net@210 NOT__not_gate
+Xnotgate@13 net@420 net@284 NOT__not_gate
+Xnotgate@14 net@259 net@278 NOT__not_gate
+.END

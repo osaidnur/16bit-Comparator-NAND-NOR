@@ -1,0 +1,38 @@
+*** SPICE deck for cell test_3in{sch} from library NAND
+*** Created on Fri Aug 16, 2024 16:34:08
+*** Last revised on Fri Aug 16, 2024 16:39:43
+*** Written on Fri Aug 16, 2024 16:39:56 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT NAND__nand_gate_4in FROM CELL nand_gate_4in{sch}
+.SUBCKT NAND__nand_gate_4in A B C D out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A net@29 gnd NMOS L=0.4U W=2U
+Mnmos@1 net@31 D gnd gnd NMOS L=0.4U W=2U
+Mnmos@2 net@29 B net@30 gnd NMOS L=0.4U W=2U
+Mnmos@3 net@30 C net@31 gnd NMOS L=0.4U W=2U
+Mpmos@1 vdd B out vdd PMOS L=0.4U W=2U
+Mpmos@2 vdd C out vdd PMOS L=0.4U W=2U
+Mpmos@3 vdd D out vdd PMOS L=0.4U W=2U
+Mpmos@4 vdd A out vdd PMOS L=0.4U W=2U
+.ENDS NAND__nand_gate_4in
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: test_3in{sch}
+Xnand_gat@1 A B C D out NAND__nand_gate_4in
+
+* Spice Code nodes in cell cell 'test_3in{sch}'
+vdd vdd 0 DC 5
+va A 0 pwl 79n 0 80n 5 159n 5 160n 0 
+vb B 0 pwl 39n 0 40n 5 79n 5 80n 0 119n 0 120n 5 159n 5 160n 0 
+vc C 0 pwl 19n 0 20n 5 39n 5 40n 0 59n 0 60n 5 79n 5 80n 0 99n 0 100n 5 119n 5 120n 0 139n 0 140n 5 159n 5 160n 0
+vd D 0 pwl 9n 0 10n 5 19n 5 20n 0 29n 0 30n 5 39n 5 40n 0 49n 0 50n 5 59n 5 60n 0 69n 0 70n 5 79n 5 80n 0 89n 0 90n 5 99n 5 100n 0 109n 0 110n 5 119n 5 120n 0 129n 0 130n 5 139n 5 140n 0 149n 0 150n 5 159n 5 160n 0
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=4ns trag v(out) val=0.5 fall=1
+.measure tran tr trig v(out) val=0.5 rais=1 td=4ns trag v(out) val=4.5 rais=1
+.tran 200n
+.include C:\electric\C5_models.txt
+.END

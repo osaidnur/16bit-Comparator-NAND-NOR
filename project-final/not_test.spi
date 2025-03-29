@@ -1,0 +1,29 @@
+*** SPICE deck for cell not_test{sch} from library NOT
+*** Created on Sat Aug 03, 2024 23:47:21
+*** Last revised on Wed Aug 21, 2024 22:51:22
+*** Written on Wed Aug 21, 2024 22:51:24 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT NOT__not_gate FROM CELL NOT:not_gate{sch}
+.SUBCKT NOT__not_gate in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@1 out in gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@1 vdd in out vdd PMOS L=0.6U W=4.5U
+.ENDS NOT__not_gate
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NOT:not_test{sch}
+Xnotgate@2 in out NOT__not_gate
+
+* Spice Code nodes in cell cell 'NOT:not_test{sch}'
+vdd vdd 0 DC 5
+vin in 0 pwl 49n 0 50n 5 99n 5 100n 0 
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=4ns trag v(out) val=0.5 fall=1
+.measure tran tr trig v(out) val=0.5 rais=1 td=4ns trag v(out) val=4.5 rais=1
+.tran 200n
+.include C:\electric\C5_models.txt
+.END

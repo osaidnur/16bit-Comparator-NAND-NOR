@@ -1,0 +1,32 @@
+*** SPICE deck for cell nor_test{sch} from library NOR
+*** Created on Sat Aug 03, 2024 22:56:30
+*** Last revised on Wed Aug 21, 2024 22:53:03
+*** Written on Wed Aug 21, 2024 22:53:05 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT NOR__nor_gate FROM CELL NOR:nor_gate{sch}
+.SUBCKT NOR__nor_gate A B out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A gnd gnd NMOS L=0.6U W=1.5U
+Mnmos@1 out B gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@0 net@0 A out vdd PMOS L=0.6U W=4.5U
+Mpmos@1 vdd B net@0 vdd PMOS L=0.6U W=4.5U
+.ENDS NOR__nor_gate
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NOR:nor_test{sch}
+Xnor_gate@1 A B out NOR__nor_gate
+
+* Spice Code nodes in cell cell 'NOR:nor_test{sch}'
+vdd vdd 0 DC 5
+va A 0 pwl 49n 0 50n 5 99n 5 100n 0 
+vb B 0 pwl 24n 0 25n 5 49n 5 50n 0 74n 0 75n 5 99n 5 100n 0 
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=4ns trag v(out) val=0.5 fall=1
+.measure tran tr trig v(out) val=0.5 rais=1 td=4ns trag v(out) val=4.5 rais=1
+.tran 200n
+.include C:\electric\C5_models.txt
+.END

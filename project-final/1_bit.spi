@@ -1,0 +1,44 @@
+*** SPICE deck for cell 1_bit{sch} from library 1bit
+*** Created on Fri Aug 16, 2024 00:55:47
+*** Last revised on Fri Aug 16, 2024 15:39:02
+*** Written on Fri Aug 16, 2024 15:39:03 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT NAND__nand_gate FROM CELL NAND:nand_gate{sch}
+.SUBCKT NAND__nand_gate A B out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A net@28 gnd NMOS L=0.4U W=2U
+Mnmos@1 net@28 B gnd gnd NMOS L=0.4U W=2U
+Mpmos@0 vdd B out vdd PMOS L=0.4U W=2U
+Mpmos@1 vdd A out vdd PMOS L=0.4U W=2U
+.ENDS NAND__nand_gate
+
+*** SUBCIRCUIT NOT__not_gate FROM CELL NOT:not_gate{sch}
+.SUBCKT NOT__not_gate in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@1 out in gnd gnd NMOS L=0.4U W=2U
+Mpmos@1 vdd in out vdd PMOS L=0.4U W=2U
+.ENDS NOT__not_gate
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: 1bit:1_bit{sch}
+Xnand_gat@0 A B net@0 NAND__nand_gate
+Xnand_gat@1 net@0 B A>B NAND__nand_gate
+Xnand_gat@2 A net@0 A<B NAND__nand_gate
+Xnand_gat@3 A<B A>B net@27 NAND__nand_gate
+Xnotgate@0 net@27 A_B NOT__not_gate
+
+* Spice Code nodes in cell cell '1bit:1_bit{sch}'
+vdd vdd 0 DC 5
+va A 0 pwl 49n 0 50n 5 99n 5 100n 0 
+vb B 0 pwl 24n 0 25n 5 49n 5 50n 0 74n 0 75n 5 99n 5 100n 0 
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=4ns trag v(out) val=0.5 fall=1
+.measure tran tr trig v(out) val=0.5 rais=1 td=4ns trag v(out) val=4.5 rais=1
+.tran 200n
+.include C:\electric\C5_models.txt
+.END

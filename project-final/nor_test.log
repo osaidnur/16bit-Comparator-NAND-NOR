@@ -1,0 +1,33 @@
+Circuit: *** SPICE deck for cell nor_test{sch} from library NOR
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+
+tf=1.75032e-007 FROM 2.49677e-008 TO 2e-007
+tr=1.72093e-007 FROM 2.79073e-008 TO 2e-007
+
+
+Date: Wed Aug 21 22:53:05 2024
+Total elapsed time: 0.087 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2355
+traniter = 2345
+tranpoints = 1117
+accept = 1094
+rejected = 23
+matrix size = 8
+fillins = 0
+solver = Normal
+Matrix Compiler1:      21 opcodes  0.1/[0.0]/0.0
+Matrix Compiler2: off  [0.0]/0.1/0.4
+

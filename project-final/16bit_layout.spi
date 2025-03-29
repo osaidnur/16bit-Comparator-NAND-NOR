@@ -1,0 +1,182 @@
+*** SPICE deck for cell 16bit_layout{lay} from library 16bit
+*** Created on Tue Aug 20, 2024 02:13:23
+*** Last revised on Tue Aug 20, 2024 21:59:48
+*** Written on Tue Aug 20, 2024 22:01:40 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT _4bit__4bit_layout FROM CELL 4bit:4bit_layout{lay}
+.SUBCKT _4bit__4bit_layout A0 A1 A2 A3 A<B A>B B0 B1 B2 B3 gnd vdd
+Mnmos@32 gnd B3 net@573 gnd NMOS L=0.6U W=1.5U AS=5.063P AD=18.675P PS=9U PD=28.05U
+Mnmos@37 gnd net@573 net@635 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@38 net@635 A3 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@39 gnd A3 net@706 gnd NMOS L=0.6U W=1.5U AS=5.063P AD=18.675P PS=9U PD=28.05U
+Mnmos@40 gnd net@706 net@715 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@41 net@715 B3 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@42 gnd B2 net@738 gnd NMOS L=0.6U W=1.5U AS=4.837P AD=18.675P PS=8.85U PD=28.05U
+Mnmos@43 gnd net@738 net@747 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@44 net@747 A2 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@45 gnd A2 net@770 gnd NMOS L=0.6U W=1.5U AS=5.063P AD=18.675P PS=9U PD=28.05U
+Mnmos@46 gnd net@770 net@779 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@47 net@779 B2 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@48 gnd B1 net@802 gnd NMOS L=0.6U W=1.5U AS=5.063P AD=18.675P PS=9U PD=28.05U
+Mnmos@49 gnd net@802 net@811 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@50 net@811 A1 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@51 gnd A1 net@834 gnd NMOS L=0.6U W=1.5U AS=5.063P AD=18.675P PS=9U PD=28.05U
+Mnmos@52 gnd net@834 net@843 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@53 net@843 B1 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@54 gnd B0 net@866 gnd NMOS L=0.6U W=1.5U AS=5.063P AD=18.675P PS=9U PD=28.05U
+Mnmos@55 gnd net@866 net@875 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@56 net@875 A0 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@57 gnd A0 net@898 gnd NMOS L=0.6U W=1.5U AS=5.063P AD=18.675P PS=9U PD=28.05U
+Mnmos@58 gnd net@898 net@907 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@59 net@907 B0 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@84 gnd net@635 net@1387 gnd NMOS L=0.6U W=1.5U AS=5.063P AD=18.675P PS=9U PD=28.05U
+Mnmos@85 gnd net@635 net@1401 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@86 net@1401 net@715 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@89 gnd net@715 net@1500 gnd NMOS L=0.6U W=1.5U AS=5.063P AD=18.675P PS=9U PD=28.05U
+Mnmos@92 gnd net@747 net@1542 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@93 net@1542 net@779 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@94 gnd net@811 net@1570 gnd nmos L=0.6U W=1.5U AS=3.6P AD=18.675P PS=6.4U PD=28.05U
+Mnmos@95 net@1570 net@843 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=3.6P PS=28.05U PD=6.4U
+Mnmos@105 net@1740 net@1401 net@1738 gnd nmos L=0.6U W=1.5U AS=1.35P AD=5.4P PS=3.3U PD=9.4U
+Mnmos@106 net@1738 net@747 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=1.35P PS=28.05U PD=3.3U
+Mnmos@107 net@1796 net@1401 net@1793 gnd nmos L=0.6U W=1.5U AS=1.35P AD=5.175P PS=3.3U PD=9.1U
+Mnmos@108 net@1793 net@779 gnd gnd nmos L=0.6U W=1.5U AS=18.675P AD=1.35P PS=28.05U PD=3.3U
+Mnmos@109 net@1834 net@1401 net@1835 gnd NMOS L=0.6U W=1.5U AS=1.013P AD=7.313P PS=2.85U PD=9.3U
+Mnmos@110 net@1835 net@1542 net@1836 gnd NMOS L=0.6U W=1.5U AS=1.238P AD=1.013P PS=3.15U PD=2.85U
+Mnmos@111 net@1836 net@811 gnd gnd NMOS L=0.6U W=1.5U AS=18.675P AD=1.238P PS=28.05U PD=3.15U
+Mnmos@112 net@1880 net@1542 net@1908 gnd NMOS L=0.6U W=1.5U AS=1.013P AD=1.013P PS=2.85U PD=2.85U
+Mnmos@113 net@1908 net@1570 net@1934 gnd NMOS L=0.6U W=1.5U AS=1.238P AD=1.013P PS=3.15U PD=2.85U
+Mnmos@114 net@1934 net@875 gnd gnd NMOS L=0.6U W=1.5U AS=18.675P AD=1.238P PS=28.05U PD=3.15U
+Mnmos@115 net@1876 net@1401 net@1880 gnd NMOS L=0.6U W=1.5U AS=1.013P AD=6.525P PS=2.85U PD=7.74U
+Mnmos@116 net@1984 net@1401 net@1985 gnd NMOS L=0.6U W=1.5U AS=1.013P AD=7.313P PS=2.85U PD=9.3U
+Mnmos@117 net@1985 net@1542 net@1986 gnd NMOS L=0.6U W=1.5U AS=1.238P AD=1.013P PS=3.15U PD=2.85U
+Mnmos@118 net@1986 net@843 gnd gnd NMOS L=0.6U W=1.5U AS=18.675P AD=1.238P PS=28.05U PD=3.15U
+Mnmos@119 net@2127 net@1542 net@2155 gnd NMOS L=0.6U W=1.5U AS=1.013P AD=1.013P PS=2.85U PD=2.85U
+Mnmos@120 net@2155 net@1570 net@2181 gnd NMOS L=0.6U W=1.5U AS=1.238P AD=1.013P PS=3.15U PD=2.85U
+Mnmos@121 net@2181 net@907 gnd gnd NMOS L=0.6U W=1.5U AS=18.675P AD=1.238P PS=28.05U PD=3.15U
+Mnmos@122 net@2123 net@1401 net@2127 gnd NMOS L=0.6U W=1.5U AS=1.013P AD=6.525P PS=2.85U PD=7.74U
+Mnmos@127 net@2332 net@1796 net@2298 gnd NMOS L=0.6U W=1.5U AS=1.013P AD=1.046P PS=2.85U PD=3U
+Mnmos@128 net@2298 net@1984 net@2324 gnd NMOS L=0.6U W=1.5U AS=1.238P AD=1.013P PS=3.15U PD=2.85U
+Mnmos@129 net@2324 net@2123 gnd gnd NMOS L=0.6U W=1.5U AS=18.675P AD=1.238P PS=28.05U PD=3.15U
+Mnmos@130 A>B net@1500 net@2332 gnd NMOS L=0.6U W=1.5U AS=1.046P AD=6.525P PS=3U PD=7.8U
+Mnmos@131 net@2412 net@1876 net@2384 gnd NMOS L=0.6U W=1.5U AS=1.013P AD=1.046P PS=2.85U PD=3U
+Mnmos@132 net@2384 net@1834 net@2404 gnd NMOS L=0.6U W=1.5U AS=1.238P AD=1.013P PS=3.15U PD=2.85U
+Mnmos@133 net@2404 net@1740 gnd gnd NMOS L=0.6U W=1.5U AS=18.675P AD=1.238P PS=28.05U PD=3.15U
+Mnmos@134 A<B net@1387 net@2412 gnd NMOS L=0.6U W=1.5U AS=1.046P AD=6.525P PS=3U PD=7.8U
+Mpmos@32 vdd B3 net@573 vdd PMOS L=0.6U W=3U AS=5.063P AD=48.492P PS=9U PD=37.92U
+Mpmos@37 vdd net@573 net@643 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@38 net@643 A3 net@635 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@39 vdd A3 net@706 vdd PMOS L=0.6U W=3U AS=5.063P AD=48.492P PS=9U PD=37.92U
+Mpmos@40 vdd net@706 net@721 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@41 net@721 B3 net@715 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@42 vdd B2 net@738 vdd PMOS L=0.6U W=3U AS=4.837P AD=48.492P PS=8.85U PD=37.92U
+Mpmos@43 vdd net@738 net@753 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@44 net@753 A2 net@747 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@45 vdd A2 net@770 vdd PMOS L=0.6U W=3U AS=5.063P AD=48.492P PS=9U PD=37.92U
+Mpmos@46 vdd net@770 net@785 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@47 net@785 B2 net@779 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@48 vdd B1 net@802 vdd PMOS L=0.6U W=3U AS=5.063P AD=48.492P PS=9U PD=37.92U
+Mpmos@49 vdd net@802 net@817 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@50 net@817 A1 net@811 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@51 vdd A1 net@834 vdd PMOS L=0.6U W=3U AS=5.063P AD=48.492P PS=9U PD=37.92U
+Mpmos@52 vdd net@834 net@849 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@53 net@849 B1 net@843 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@54 vdd B0 net@866 vdd PMOS L=0.6U W=3U AS=5.063P AD=48.492P PS=9U PD=37.92U
+Mpmos@55 vdd net@866 net@881 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@56 net@881 A0 net@875 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@57 vdd A0 net@898 vdd PMOS L=0.6U W=3U AS=5.063P AD=48.492P PS=9U PD=37.92U
+Mpmos@58 vdd net@898 net@913 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@59 net@913 B0 net@907 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@84 vdd net@635 net@1387 vdd PMOS L=0.6U W=3U AS=5.063P AD=48.492P PS=9U PD=37.92U
+Mpmos@85 vdd net@635 net@1409 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@86 net@1409 net@715 net@1401 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@89 vdd net@715 net@1500 vdd PMOS L=0.6U W=3U AS=5.063P AD=48.492P PS=9U PD=37.92U
+Mpmos@92 vdd net@747 net@1539 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@93 net@1539 net@779 net@1542 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@94 vdd net@811 net@1568 vdd pmos L=0.9U W=3U AS=2.7P AD=48.492P PS=4.8U PD=37.92U
+Mpmos@95 net@1568 net@843 net@1570 vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+Mpmos@105 net@1740 net@1401 vdd vdd pmos L=0.6U W=3U AS=48.492P AD=5.4P PS=37.92U PD=9.4U
+Mpmos@106 vdd net@747 net@1740 vdd pmos L=0.6U W=3U AS=5.4P AD=48.492P PS=9.4U PD=37.92U
+Mpmos@107 net@1796 net@1401 vdd vdd pmos L=0.6U W=3U AS=48.492P AD=5.175P PS=37.92U PD=9.1U
+Mpmos@108 vdd net@779 net@1796 vdd pmos L=0.6U W=3U AS=5.175P AD=48.492P PS=9.1U PD=37.92U
+Mpmos@109 net@1834 net@1401 net@1845 vdd PMOS L=0.6U W=4.5U AS=7.425P AD=7.313P PS=7.8U PD=9.3U
+Mpmos@110 net@1845 net@1542 net@1834 vdd PMOS L=0.6U W=4.5U AS=7.313P AD=7.425P PS=9.3U PD=7.8U
+Mpmos@111 net@1834 net@811 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=7.313P PS=37.92U PD=9.3U
+Mpmos@112 net@1876 net@1542 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=6.525P PS=37.92U PD=7.74U
+Mpmos@113 vdd net@1570 net@1876 vdd PMOS L=0.6U W=4.5U AS=6.525P AD=48.492P PS=7.74U PD=37.92U
+Mpmos@114 net@1876 net@875 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=6.525P PS=37.92U PD=7.74U
+Mpmos@115 vdd net@1401 net@1876 vdd PMOS L=0.6U W=4.5U AS=6.525P AD=48.492P PS=7.74U PD=37.92U
+Mpmos@116 net@1984 net@1401 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=7.313P PS=37.92U PD=9.3U
+Mpmos@117 vdd net@1542 net@1984 vdd PMOS L=0.6U W=4.5U AS=7.313P AD=48.492P PS=9.3U PD=37.92U
+Mpmos@118 net@1984 net@843 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=7.313P PS=37.92U PD=9.3U
+Mpmos@119 net@2123 net@1542 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=6.525P PS=37.92U PD=7.74U
+Mpmos@120 vdd net@1570 net@2123 vdd PMOS L=0.6U W=4.5U AS=6.525P AD=48.492P PS=7.74U PD=37.92U
+Mpmos@121 net@2123 net@907 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=6.525P PS=37.92U PD=7.74U
+Mpmos@122 vdd net@1401 net@2123 vdd PMOS L=0.6U W=4.5U AS=6.525P AD=48.492P PS=7.74U PD=37.92U
+Mpmos@127 A>B net@1796 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=6.525P PS=37.92U PD=7.8U
+Mpmos@128 vdd net@1984 A>B vdd PMOS L=0.6U W=4.5U AS=6.525P AD=48.492P PS=7.8U PD=37.92U
+Mpmos@129 A>B net@2123 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=6.525P PS=37.92U PD=7.8U
+Mpmos@130 vdd net@1500 A>B vdd PMOS L=0.6U W=4.5U AS=6.525P AD=48.492P PS=7.8U PD=37.92U
+Mpmos@131 A<B net@1876 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=6.525P PS=37.92U PD=7.8U
+Mpmos@132 vdd net@1834 A<B vdd PMOS L=0.6U W=4.5U AS=6.525P AD=48.492P PS=7.8U PD=37.92U
+Mpmos@133 A<B net@1740 vdd vdd PMOS L=0.6U W=4.5U AS=48.492P AD=6.525P PS=37.92U PD=7.8U
+Mpmos@134 vdd net@1387 A<B vdd PMOS L=0.6U W=4.5U AS=6.525P AD=48.492P PS=7.8U PD=37.92U
+.ENDS _4bit__4bit_layout
+
+*** SUBCIRCUIT NOR__nor_layout FROM CELL NOR:nor_layout{lay}
+.SUBCKT NOR__nor_layout A B gnd out vdd
+Mnmos@0 gnd A out gnd nmos L=0.6U W=1.5U AS=3.6P AD=9.9P PS=6.4U PD=17.7U
+Mnmos@1 out B gnd gnd nmos L=0.6U W=1.5U AS=9.9P AD=3.6P PS=17.7U PD=6.4U
+Mpmos@0 vdd A net@16 vdd pmos L=0.9U W=3U AS=2.7P AD=22.5P PS=4.8U PD=31.8U
+Mpmos@1 net@16 B out vdd pmos L=0.9U W=3U AS=3.6P AD=2.7P PS=6.4U PD=4.8U
+.ENDS NOR__nor_layout
+
+*** TOP LEVEL CELL: 16bit_layout{lay}
+X_4bit_lay@5 net@89 net@65 net@53 net@40 A<B A>B net@28 net@25 net@3 net@14 _4bit_lay@5_gnd _4bit_lay@5_vdd _4bit__4bit_layout
+X_4bit_lay@6 _4bit_lay@6_A0 _4bit_lay@6_A1 _4bit_lay@6_A2 _4bit_lay@6_A3 net@80 net@28 net@124 B1 B2 B3 _4bit_lay@6_gnd _4bit_lay@6_vdd _4bit__4bit_layout
+X_4bit_lay@7 _4bit_lay@7_A0 _4bit_lay@7_A1 _4bit_lay@7_A2 _4bit_lay@7_A3 net@40 net@0 B12 B13 net@102 B15 _4bit_lay@7_gnd _4bit_lay@7_vdd _4bit__4bit_layout
+X_4bit_lay@8 _4bit_lay@8_A0 _4bit_lay@8_A1 _4bit_lay@8_A2 _4bit_lay@8_A3 net@53 net@3 net@147 net@135 B10 B11 _4bit_lay@8_gnd _4bit_lay@8_vdd _4bit__4bit_layout
+X_4bit_lay@9 _4bit_lay@9_A0 _4bit_lay@9_A1 _4bit_lay@9_A2 _4bit_lay@9_A3 net@65 net@17 net@125 net@126 net@127 B7 _4bit_lay@9_gnd _4bit_lay@9_vdd _4bit__4bit_layout
+Xnor_layo@0 net@161 A>B nor_layo@0_gnd A_B nor_layo@0_vdd NOR__nor_layout
+
+* Spice Code nodes in cell cell '16bit_layout{lay}'
+vdd vdd 0 DC 5
+va15 A15 0 pwl 79n 0 80n 0
+va14 A14 0 pwl 79n 0 80n 0
+va13 A13 0 pwl 79n 0 80n 0
+va12 A12 0 pwl 79n 0 80n 0
+va11 A11 0 pwl 79n 0 80n 0
+va10 A10 0 pwl 79n 0 80n 0
+va9 A9 0 pwl 79n 0 80n 0
+va8 A8 0 pwl 79n 0 80n 0
+va7 A7 0 pwl 79n 0 80n 0
+va6 A6 0 pwl 79n 0 80n 0
+va5 A5 0 pwl 79n 0 80n 0
+va4 A4 0 pwl 79n 0 80n 0
+va3 A3 0 pwl 79n 0 80n 0
+va2 A2 0 pwl 79n 0 80n 0
+va1 A1 0 pwl 79n 0 80n 0
+va0 A0 0 pwl 79n 0 80n 0
+vb15 B15 0 pwl 79n 0 80n 0
+vb14 B14 0 pwl 79n 0 80n 0
+vb13 B13 0 pwl 79n 0 80n 0
+vb12 B12 0 pwl 79n 0 80n 5
+vb11 B11 0 pwl 79n 0 80n 0
+vb9 B9 0 pwl 79n 0 80n 0
+vb8 B8 0 pwl 79n 0 80n 0
+vb7 B7 0 pwl 79n 0 80n 0
+vb6 B6 0 pwl 79n 0 80n 0
+vb5 B5 0 pwl 79n 0 80n 0
+vb4 B4 0 pwl 79n 0 80n 0
+vb3 B3 0 pwl 79n 0 80n 0
+vb2 B2 0 pwl 79n 0 80n 0
+vb1 B1 0 pwl 79n 0 80n 0
+vb0 B0 0 pwl 79n 0 80n 0
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=4ns trag v(out) val=0.5 fall=1
+.measure tran tr trig v(out) val=0.5 rais=1 td=4ns trag v(out) val=4.5 rais=1
+.tran 200n
+.include C:\electric\C5_models.txt
+.END

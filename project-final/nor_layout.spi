@@ -1,0 +1,24 @@
+*** SPICE deck for cell nor_layout{lay} from library NOR
+*** Created on Sat Aug 17, 2024 18:19:26
+*** Last revised on Sun Aug 18, 2024 20:43:43
+*** Written on Sun Aug 18, 2024 20:43:48 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: NOR:nor_layout{lay}
+Mnmos@0 gnd A out gnd nmos L=0.4U W=1U AS=1.6P AD=4.4P PS=4.267U PD=11.8U
+Mnmos@1 out B gnd gnd nmos L=0.4U W=1U AS=4.4P AD=1.6P PS=11.8U PD=4.267U
+Mpmos@0 vdd A net@16 vdd pmos L=0.6U W=2U AS=1.2P AD=10P PS=3.2U PD=21.2U
+Mpmos@1 net@16 B out vdd pmos L=0.6U W=2U AS=1.6P AD=1.2P PS=4.267U PD=3.2U
+
+* Spice Code nodes in cell cell 'NOR:nor_layout{lay}'
+vdd vdd 0 DC 5
+va A 0 pwl 49n 0 50n 5 99n 5 100n 0 
+vb B 0 pwl 24n 0 25n 5 49n 5 50n 0 74n 0 75n 5 99n 5 100n 0 
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=8ns trag v(out) val=0.5 fall=1
+.measure tran tr trig v(out) val=0.5 rais=1 td=50ns trag v(out) val=4.5 rais=1
+.tran 0 300ns
+.measure tran powerR1 avg i(vdd)*v(vdd)
+.include c:\electric\C5_models.txt
+.END

@@ -1,0 +1,25 @@
+*** SPICE deck for cell nand_gate_2in{sch} from library NAND
+*** Created on Sat Aug 03, 2024 21:10:01
+*** Last revised on Wed Aug 21, 2024 22:55:54
+*** Written on Wed Aug 21, 2024 22:55:58 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NAND:nand_gate_2in{sch}
+Mnmos@0 out A net@28 gnd NMOS L=0.6U W=1.5U
+Mnmos@1 net@28 B gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@0 vdd B out vdd PMOS L=0.6U W=4.5U
+Mpmos@1 vdd A out vdd PMOS L=0.6U W=4.5U
+
+* Spice Code nodes in cell cell 'NAND:nand_gate_2in{sch}'
+vdd vdd 0 DC 5
+va A 0 pwl 49n 0 50n 5 99n 5 100n 0 
+vb B 0 pwl 24n 0 25n 5 49n 5 50n 0 74n 0 75n 5 99n 5 100n 0 
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=4ns trag v(out) val=0.5 fall=1
+.measure tran tr trig v(out) val=0.5 rais=1 td=4ns trag v(out) val=4.5 rais=1
+.tran 150n
+.include C:\electric\C5_models.txt
+.END

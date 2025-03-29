@@ -1,0 +1,23 @@
+*** SPICE deck for cell nand2_layout{lay} from library NAND
+*** Created on Sun Aug 18, 2024 17:01:15
+*** Last revised on Wed Aug 21, 2024 22:55:23
+*** Written on Wed Aug 21, 2024 22:55:26 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: NAND:nand2_layout{lay}
+Mnmos@0 out A net@0 gnd nmos L=0.6U W=1.5U AS=1.35P AD=5.175P PS=3.3U PD=9.1U
+Mnmos@1 net@0 B gnd gnd nmos L=0.6U W=1.5U AS=16.425P AD=1.35P PS=27.9U PD=3.3U
+Mpmos@0 out A vdd vdd pmos L=0.6U W=3U AS=18.045P AD=5.175P PS=18.6U PD=9.1U
+Mpmos@1 vdd B out vdd pmos L=0.6U W=3U AS=5.175P AD=18.045P PS=9.1U PD=18.6U
+
+* Spice Code nodes in cell cell 'NAND:nand2_layout{lay}'
+vdd vdd 0 DC 5
+va A 0 pwl 49n 0 50n 5 99n 5 100n 0 
+vb B 0 pwl 24n 0 25n 5 49n 5 50n 0 74n 0 75n 5 99n 5 100n 0 
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=4ns trag v(out) val=0.5 fall=1
+.measure tran tr trig v(out) val=0.5 rais=1 td=4ns trag v(out) val=4.5 rais=1
+.tran 150n
+.include C:\electric\C5_models.txt
+.END

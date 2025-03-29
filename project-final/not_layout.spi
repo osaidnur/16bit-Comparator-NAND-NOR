@@ -1,0 +1,20 @@
+*** SPICE deck for cell not_layout{lay} from library NOT
+*** Created on Sun Aug 18, 2024 16:03:32
+*** Last revised on Tue Aug 20, 2024 02:06:40
+*** Written on Wed Aug 21, 2024 22:52:21 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: NOT:not_layout{lay}
+Mnmos@0 gnd in out gnd NMOS L=0.6U W=1.5U AS=5.063P AD=14.625P PS=9U PD=25.5U
+Mpmos@0 vdd in out vdd PMOS L=0.6U W=3U AS=5.063P AD=20.25P PS=9U PD=29.1U
+
+* Spice Code nodes in cell cell 'NOT:not_layout{lay}'
+vdd vdd 0 DC 5
+vin in 0 pwl 49n 0 50n 5 99n 5 100n 0 
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=4ns trag v(out) val=0.5 fall=1
+.measure tran tr trig v(out) val=0.5 rais=1 td=4ns trag v(out) val=4.5 rais=1
+.tran 300n
+.include C:\electric\C5_models.txt
+.END

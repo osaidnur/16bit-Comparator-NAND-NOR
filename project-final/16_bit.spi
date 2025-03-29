@@ -1,0 +1,146 @@
+*** SPICE deck for cell 16_bit{sch} from library 16bit
+*** Created on Sat Aug 17, 2024 14:19:44
+*** Last revised on Wed Aug 21, 2024 23:48:26
+*** Written on Wed Aug 28, 2024 19:00:27 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT NAND__nand_gate_2in FROM CELL NAND:nand_gate_2in{sch}
+.SUBCKT NAND__nand_gate_2in A B out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A net@28 gnd NMOS L=0.6U W=1.5U
+Mnmos@1 net@28 B gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@0 vdd B out vdd PMOS L=0.6U W=4.5U
+Mpmos@1 vdd A out vdd PMOS L=0.6U W=4.5U
+.ENDS NAND__nand_gate_2in
+
+*** SUBCIRCUIT NAND__nand_gate_4in FROM CELL NAND:nand_gate_4in{sch}
+.SUBCKT NAND__nand_gate_4in A B C D out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A net@29 gnd NMOS L=0.6U W=1.5U
+Mnmos@1 net@31 D gnd gnd NMOS L=0.6U W=1.5U
+Mnmos@2 net@29 B net@30 gnd NMOS L=0.6U W=1.5U
+Mnmos@3 net@30 C net@31 gnd NMOS L=0.6U W=1.5U
+Mpmos@1 vdd B out vdd PMOS L=0.6U W=1.5U
+Mpmos@2 vdd C out vdd PMOS L=0.6U W=1.5U
+Mpmos@3 vdd D out vdd PMOS L=0.6U W=1.5U
+Mpmos@4 vdd A out vdd PMOS L=0.6U W=1.5U
+.ENDS NAND__nand_gate_4in
+
+*** SUBCIRCUIT NAND__nand_gate_3in FROM CELL NAND:nand_gate_3in{sch}
+.SUBCKT NAND__nand_gate_3in A B C out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A net@11 gnd NMOS L=0.6U W=1.5U
+Mnmos@2 net@11 B net@12 gnd NMOS L=0.6U W=1.5U
+Mnmos@3 net@12 C gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@0 vdd B out vdd PMOS L=0.6U W=4.5U
+Mpmos@1 vdd C out vdd PMOS L=0.6U W=4.5U
+Mpmos@3 vdd A out vdd PMOS L=0.6U W=4.5U
+.ENDS NAND__nand_gate_3in
+
+*** SUBCIRCUIT NOR__nor_gate FROM CELL NOR:nor_gate{sch}
+.SUBCKT NOR__nor_gate A B out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out A gnd gnd NMOS L=0.6U W=1.5U
+Mnmos@1 out B gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@0 net@0 A out vdd PMOS L=0.6U W=4.5U
+Mpmos@1 vdd B net@0 vdd PMOS L=0.6U W=4.5U
+.ENDS NOR__nor_gate
+
+*** SUBCIRCUIT NOT__not_gate FROM CELL NOT:not_gate{sch}
+.SUBCKT NOT__not_gate in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@1 out in gnd gnd NMOS L=0.6U W=1.5U
+Mpmos@1 vdd in out vdd PMOS L=0.6U W=4.5U
+.ENDS NOT__not_gate
+
+*** SUBCIRCUIT _4bit__4_bit FROM CELL 4bit:4_bit{sch}
+.SUBCKT _4bit__4_bit A0 A1 A2 A3 A<B A>B B0 B1 B2 B3
+** GLOBAL gnd
+** GLOBAL vdd
+Xnand_gat@1 net@286 net@300 net@342 NAND__nand_gate_2in
+Xnand_gat@3 net@286 net@303 net@344 NAND__nand_gate_2in
+Xnand_gat@9 net@278 net@342 net@346 net@350 A<B NAND__nand_gate_4in
+Xnand_gat@10 net@284 net@344 net@348 net@352 A>B NAND__nand_gate_4in
+Xnand_gat@11 net@286 net@308 net@319 net@346 NAND__nand_gate_3in
+Xnand_gat@12 net@286 net@308 net@321 net@348 NAND__nand_gate_3in
+Xnand_gat@13 net@286 net@308 net@325 net@332 net@350 NAND__nand_gate_4in
+Xnand_gat@14 net@286 net@308 net@325 net@451 net@352 NAND__nand_gate_4in
+Xnor_gate@1 A3 net@163 net@259 NOR__nor_gate
+Xnor_gate@2 net@356 B3 net@420 NOR__nor_gate
+Xnor_gate@10 net@186 B2 net@303 NOR__nor_gate
+Xnor_gate@11 A1 net@195 net@319 NOR__nor_gate
+Xnor_gate@12 net@198 B1 net@321 NOR__nor_gate
+Xnor_gate@13 A0 net@210 net@332 NOR__nor_gate
+Xnor_gate@14 net@207 B0 net@451 NOR__nor_gate
+Xnor_gate@16 net@300 net@303 net@308 NOR__nor_gate
+Xnor_gate@17 net@319 net@321 net@325 NOR__nor_gate
+Xnor_gate@19 A2 net@364 net@300 NOR__nor_gate
+Xnor_gate@21 net@259 net@420 net@286 NOR__nor_gate
+Xnotgate@4 A3 net@356 NOT__not_gate
+Xnotgate@6 A2 net@186 NOT__not_gate
+Xnotgate@7 A1 net@198 NOT__not_gate
+Xnotgate@8 A0 net@207 NOT__not_gate
+Xnotgate@9 B3 net@163 NOT__not_gate
+Xnotgate@10 B2 net@364 NOT__not_gate
+Xnotgate@11 B1 net@195 NOT__not_gate
+Xnotgate@12 B0 net@210 NOT__not_gate
+Xnotgate@13 net@420 net@284 NOT__not_gate
+Xnotgate@14 net@259 net@278 NOT__not_gate
+.ENDS _4bit__4_bit
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: 16_bit{sch}
+X_4_bit@0 A12 A13 A14 A15 net@14 net@1 B12 B13 B14 B15 _4bit__4_bit
+X_4_bit@1 A8 A9 A10 A11 net@17 net@3 B8 B9 B10 B11 _4bit__4_bit
+X_4_bit@2 A4 A5 A6 A7 net@20 net@8 B4 B5 B6 B7 _4bit__4_bit
+X_4_bit@3 A0 A1 A2 A3 net@25 net@11 B0 B1 B2 B3 _4bit__4_bit
+X_4_bit@4 net@11 net@8 net@3 net@1 A<B A>B net@25 net@20 net@17 net@14 _4bit__4_bit
+Xnor_gate@0 A>B A<B A_B NOR__nor_gate
+
+* Spice Code nodes in cell cell '16_bit{sch}'
+vdd vdd 0 DC 5
+va15 A15 0 pwl 79n 0 80n 5
+va14 A14 0 pwl 79n 0 80n 0
+va13 A13 0 pwl 79n 0 80n 0
+va12 A12 0 pwl 79n 0 80n 0
+va11 A11 0 pwl 79n 0 80n 0
+va10 A10 0 pwl 79n 0 80n 0
+va9 A9 0 pwl 79n 0 80n 0
+va8 A8 0 pwl 79n 0 80n 0
+va7 A7 0 pwl 79n 0 80n 0
+va6 A6 0 pwl 79n 0 80n 0
+va5 A5 0 pwl 79n 0 80n 0
+va4 A4 0 pwl 79n 0 80n 0
+va3 A3 0 pwl 79n 0 80n 0
+va2 A2 0 pwl 79n 0 80n 0
+va1 A1 0 pwl 79n 0 80n 0
+va0 A0 0 pwl 79n 0 80n 0
+vb15 B15 0 pwl 79n 0 80n 5
+vb14 B14 0 pwl 79n 0 80n 0
+vb13 B13 0 pwl 79n 0 80n 0
+vb12 B12 0 pwl 79n 0 80n 0
+vb11 B11 0 pwl 79n 0 80n 0
+vb10 B10 0 pwl 79n 0 80n 0
+vb9 B9 0 pwl 79n 0 80n 0
+vb8 B8 0 pwl 79n 0 80n 0
+vb7 B7 0 pwl 79n 0 80n 0
+vb6 B6 0 pwl 79n 0 80n 0
+vb5 B5 0 pwl 79n 0 80n 0
+vb4 B4 0 pwl 79n 0 80n 0
+vb3 B3 0 pwl 79n 0 80n 0
+vb2 B2 0 pwl 79n 0 80n 0
+vb1 B1 0 pwl 79n 0 80n 0
+vb0 B0 0 pwl 79n 0 80n 0
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=4ns trag v(out) val=0.5 fall=1
+.measure tran tr trig v(out) val=0.5 rais=1 td=4ns trag v(out) val=4.5 rais=1
+.tran 200n
+.include C:\electric\C5_models.txt
+.END
