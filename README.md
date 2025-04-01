@@ -1,8 +1,8 @@
 # 16-bit Comparator Using NAND and NOR Gates
+This project demonstrates the design and implementation of a **16-bit magnitude comparator** using only **NAND** and **NOR** logic gates. A magnitude comparator is a combinational circuit that compares two binary numbers and determines their relative magnitudes (greater than, less than, or equal).
 
-## 📑 Table of Contents
+## 📚 Table of Contents
 
-- [Overview](#-overview)
 - [Project Structure](#-project-structure)
 - [Design Methodology](#-design-methodology)
    - [1-bit Comparator](#-1-bit-comparator)
@@ -11,13 +11,6 @@
 - [Implementation Details](#️-implementation-details)
 - [Applications](#-applications)
 
-
-
-## 📘 Overview
-
-This project demonstrates the design and implementation of a **16-bit magnitude comparator** using only **NAND** and **NOR** logic gates. A magnitude comparator is a combinational circuit that compares two binary numbers and determines their relative magnitudes (greater than, less than, or equal).
-
----
 
 ## 📁 Project Structure
 
