@@ -69,3 +69,10 @@ Magnitude comparators are commonly used in:
 
 ---
 
+## 👥 Contributors
+
+- **Osaid Nur**
+- **[Moath Wajeeh](https://github.com/SuperMoathx7)**
+- **[Ahmad Waleed](https://github.com/3ahma)**
+
+
